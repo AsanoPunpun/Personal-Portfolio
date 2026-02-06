@@ -21,7 +21,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.17); 
+  background-color: rgba(255,255,255,0.19); 
   z-index: 0;
 }
 
@@ -29,7 +29,7 @@ body::before {
 .main-container {
   width: 85%;
   max-width: 1000px;
-  background-color: #ecc21d;
+  background-color: #ebb80e;
   padding: 25px;
   border-radius: 15px;
   display: flex;
