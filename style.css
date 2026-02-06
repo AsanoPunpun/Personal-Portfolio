@@ -1,33 +1,51 @@
+/* --- GENERAL BODY --- */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-image: url("Images\usagi tail.jpg");
+  background-image: url("Images/usagi tail.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   padding: 40px 0;
+  /* Dim the background image slightly */
+  position: relative;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.17); 
+  z-index: 0;
+}
+
+/* --- MAIN CONTAINER --- */
 .main-container {
   width: 85%;
   max-width: 1000px;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.45), rgba(255,255,255,0.45)),
-    url("https://i.pinimg.com/736x/0c/f3/4e/0cf34ed5813eb3b5c5ab69fc2a2dacba.jpg");
-  background-size: cover;
-  background-position: center;
+  background-color: #ecc21d;
   padding: 25px;
   border-radius: 15px;
   display: flex;
   gap: 25px;
+  /* Add shadow for depth */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
 }
 
+/* --- INFO SECTION --- */
 .info-section {
   flex: 3;
 }
 
+/* --- IMAGE SECTION --- */
 .image-section {
   flex: 1;
   display: flex;
@@ -39,8 +57,11 @@ body {
   width: 220px;
   height: 240px;
   border-radius: 15px;
+  /* Add shadow to images for more dimension */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
+/* --- NAVIGATION --- */
 .nav {
   display: flex;
   gap: 15px;
@@ -54,20 +75,26 @@ body {
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
 }
 
 .nav a:hover {
   background-color: #FEC20C;
 }
 
+/* --- CONTENT BOX --- */
 .content-box {
-  background-color: #C49102;
+  background-color: #C49102; 
   color: #FEFBBD;
   padding: 20px;
   border-radius: 10px;
+  /* Add shadow for depth */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  position: relative;
+  z-index: 1;
 }
 
-/* PROJECTS */
+/* --- PROJECTS --- */
 .project-box {
   display: flex;
   align-items: center;
@@ -76,6 +103,8 @@ body {
   padding: 12px;
   gap: 15px;
   margin-bottom: 20px;
+  /* Shadow for project boxes */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
 .project-box img {
@@ -84,12 +113,13 @@ body {
   border-radius: 8px;
 }
 
+/* Arrows */
 .arrow {
   font-size: 24px;
   cursor: pointer;
 }
 
-/* SKILLS */
+/* --- SKILLS --- */
 .skills-grid {
   display: flex;
   gap: 15px;
@@ -102,6 +132,7 @@ body {
   padding: 10px;
   border-radius: 10px;
   text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
 .skill-card img {
@@ -119,9 +150,10 @@ body {
   background-color: #FEC20C;
   font-weight: bold;
   cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* --- Added for View More Extra Skills --- */
+/* --- Extra Skills (View More) --- */
 .extra-skills {
   display: none;
   margin-top: 20px;
@@ -134,7 +166,7 @@ body {
   display: flex;
 }
 
-/* --- Added for Contact Information --- */
+/* --- Contact Information --- */
 .content-box h3 {
   margin-top: 25px;
   font-size: 1.3em;
