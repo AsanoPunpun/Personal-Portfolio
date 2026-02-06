@@ -93,6 +93,7 @@ body {
 .skills-grid {
   display: flex;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 .skill-card {
@@ -117,4 +118,37 @@ body {
   border-radius: 8px;
   background-color: #FEC20C;
   font-weight: bold;
+  cursor: pointer;
+}
+
+/* --- Added for View More Extra Skills --- */
+.extra-skills {
+  display: none;
+  margin-top: 20px;
+  gap: 15px;
+  flex-wrap: wrap;
+  transition: all 0.4s ease;
+}
+
+.extra-skills.show {
+  display: flex;
+}
+
+/* --- Added for Contact Information --- */
+.content-box h3 {
+  margin-top: 25px;
+  font-size: 1.3em;
+  color: #FEFBBD;
+  border-bottom: 1px solid #FEC20C;
+  padding-bottom: 5px;
+}
+
+.content-box p a {
+  color: #FEFBBD;
+  text-decoration: underline;
+}
+
+.content-box p a:hover {
+  color: #fff;
+  text-decoration: none;
 }

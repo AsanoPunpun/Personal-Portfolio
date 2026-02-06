@@ -11,7 +11,7 @@
 
   <div class="info-section">
     <div class="nav">
-      <a href="about.html">ABOUT ME</a>
+      <a href="index.html">ABOUT ME</a>
       <a href="projects.html">PROJECTS</a>
       <a href="skills.html">SKILLS</a>
     </div>
@@ -21,21 +21,42 @@
 
       <div class="skills-grid">
         <div class="skill-card">
-          <img src="Images\linux.jpg">
+          <img src="Images/linux.jpg" alt="Linux">
           <h4>Linux</h4>
-          <p>Basic and intermediate linux commands</p>
+          <p>Basic and intermediate Linux commands</p>
         </div>
 
         <div class="skill-card">
-          <img src="Images\OIP (10).webp">
+          <img src="Images/OIP (10).webp" alt="Java">
           <h4>Java language</h4>
-          <p>Writing efficient, secure, adn scalable code using Java</p>
+          <p>Writing efficient, secure, and scalable code using Java</p>
         </div>
 
         <div class="skill-card">
-          <img src="Images\OIP (11).webp">
+          <img src="Images/OIP (11).webp" alt="Network">
           <h4>Network Configuration</h4>
           <p>Setting up and managing how devices communicate within a network.</p>
+        </div>
+      </div>
+
+      <!-- Hidden additional skills -->
+      <div class="skills-grid extra-skills">
+        <div class="skill-card">
+          <img src="Images\chess.webp" alt="Python">
+          <h4>Chess</h4>
+          <p>Varsity from elementary to highshool</p>
+        </div>
+
+        <div class="skill-card">
+          <img src="Images\paint.webp" alt="HTML">
+          <h4>Painting</h4>
+          <p>Use of watercolor with photo references</p>
+        </div>
+
+        <div class="skill-card">
+          <img src="Images\japanese language.webp" alt="JavaScript">
+          <h4>Speaking Japanese</h4>
+          <p>Know basic japanese and a little bit of intermediate japanese language.</p>
         </div>
       </div>
 
@@ -43,7 +64,21 @@
     </div>
   </div>
 
-
 </div>
+
+<script>
+const viewMoreBtn = document.querySelector('.view-more');
+const extraSkills = document.querySelector('.extra-skills');
+
+viewMoreBtn.addEventListener('click', () => {
+  extraSkills.classList.toggle('show');
+  if(extraSkills.classList.contains('show')){
+    viewMoreBtn.textContent = 'View Less';
+  } else {
+    viewMoreBtn.textContent = 'View More';
+  }
+});
+</script>
+
 </body>
 </html>

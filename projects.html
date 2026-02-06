@@ -11,39 +11,90 @@
 
   <div class="info-section">
     <div class="nav">
-      <a href="about.html">ABOUT ME</a>
+      <a href="index.html">ABOUT ME</a>
       <a href="projects.html">PROJECTS</a>
       <a href="skills.html">SKILLS</a>
     </div>
 
     <div class="content-box">
       <h3>2026 & Recent Projects</h3>
-
-      <div class="project-box">
-        <span class="arrow">&#10094;</span>
-        <img src="Images\Copy of Copy of IDBuff+ (6).png">
-        <div>
-          <h4>Segregains</h4>
-          <p>A reward based waste management.</p>
+      <div class="project-slider" data-year="2026">
+        <div class="project-box">
+          <span class="arrow prev">&#10094;</span>
+          <img src="Images/Copy of Copy of IDBuff+ (6).png">
+          <div>
+            <h4>Segregains</h4>
+            <p>A reward based waste management.</p>
+          </div>
+          <span class="arrow next">&#10095;</span>
         </div>
-        <span class="arrow">&#10095;</span>
+        <div class="project-box" style="display:none">
+          <span class="arrow prev">&#10094;</span>
+          <img src="Images\CC7 REPORTING.png">
+          <div>
+            <h4>Sprint</h4>
+            <p>An augmented reality glasses to promote an active and sharp lifestyle.</p>
+          </div>
+          <span class="arrow next">&#10095;</span>
+        </div>
       </div>
 
       <h3>2025 – 2023</h3>
-
-      <div class="project-box">
-        <span class="arrow">&#10094;</span>
-        <img src="Images\OIP (9).webp">
-        <div>
-          <h4>Joybus Booking System</h4>
-          <p>Feasibility on Joybus booking system.</p>
+      <div class="project-slider" data-year="2025">
+        <div class="project-box">
+          <span class="arrow prev">&#10094;</span>
+          <img src="Images/OIP (9).webp">
+          <div>
+            <h4>Joybus Booking System</h4>
+            <p>Feasibility on Joybus booking system.</p>
+          </div>
+          <span class="arrow next">&#10095;</span>
         </div>
-        <span class="arrow">&#10095;</span>
+        <div class="project-box" style="display:none">
+          <span class="arrow prev">&#10094;</span>
+          <img src="Images\Sales Pitch for FoodieRoo Runners.png">
+          <div>
+            <h4>FoodieRoo Runners</h4>
+            <p>A prototype for a food delivering app.</p>
+          </div>
+          <span class="arrow next">&#10095;</span>
+        </div>
       </div>
     </div>
   </div>
 
-
 </div>
+
+<!-- JavaScript for carousel -->
+<script>
+document.querySelectorAll('.project-slider').forEach(slider => {
+  let projects = slider.querySelectorAll('.project-box');
+  let current = 0;
+
+  const showProject = index => {
+    projects.forEach((proj, i) => {
+      proj.style.display = (i === index) ? 'flex' : 'none';
+    });
+  }
+
+  slider.querySelectorAll('.arrow.next').forEach(btn => {
+    btn.addEventListener('click', () => {
+      current = (current + 1) % projects.length;
+      showProject(current);
+    });
+  });
+
+  slider.querySelectorAll('.arrow.prev').forEach(btn => {
+    btn.addEventListener('click', () => {
+      current = (current - 1 + projects.length) % projects.length;
+      showProject(current);
+    });
+  });
+
+  // Initialize first project
+  showProject(current);
+});
+</script>
+
 </body>
 </html>
